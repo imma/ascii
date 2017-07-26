@@ -4,7 +4,7 @@ function version {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local ver_asciinema="$(asciinema --version 2>/dev/null | awk '{print $2}' || true)"
+  local ver_asciinema="$(env LANG=en_US.UTF-8 asciinema --version 2>/dev/null | awk '{print $2}' || true)"
   jq -n --arg asciinema "$ver_asciinema" '{asciinema: $asciinema}'
 }
 
