@@ -2,11 +2,7 @@
 
 function _asciinema_profile {
   local shome="${_asciinema_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
-  PATH="$shome/bin:$shome/exec:$PATH"
-  export ANSIBLE_ROLES_PATH="${ANSIBLE_ROLES_PATH:+${ANSIBLE_ROLES_PATH}:}$shome/roles"
-  export ANSIBLE_LIBRARY="${ANSIBLE_LIBRARY:+${ANSIBLE_LIBRARY}:}$shome/library"
-
-  ASCIINEMA_VERSION='1.4.0'
+  PATH="$shome/bin:$PATH"
 }
 
 _asciinema_profile
