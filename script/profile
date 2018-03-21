@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-function _asciinema_profile {
-  local shome="${_asciinema_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+function _ascii_profile {
+  local shome="${_ascii_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
 }
 
-_asciinema_profile
+_ascii_profile
