@@ -1,1 +1,1 @@
-content/asciinema.md
+content/ascii.md
