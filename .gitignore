@@ -1,2 +1,4 @@
 /vendor
 Pipfile.lock
+node_modules
+yarn.lock

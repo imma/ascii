@@ -4,10 +4,15 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
+  mkdir -p "$shome/bin"
+
   block compile pipenv "$@"
   local pth_asciinema="$(pipenv run which asciinema)"
-  mkdir -p "$shome/bin"
   ln -nfs "$pth_asciinema" "$shome/bin/"
+
+  block compile yarn
+  local pth_asciify="$(yarn exec -s which asciify)"
+  ln -nfs "$pth_asciify" "$shome/bin/"
 }
 
 main "$@"
